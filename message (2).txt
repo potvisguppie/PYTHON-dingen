@@ -1,0 +1,275 @@
+absolute number:absoluut getal
+acute angle:scherpe hoek
+acute-angled triangle:scherphoekige driehoek
+altitude:hoogtelijn
+amplitude:amplitude
+angle:hoek
+angle at the centre:middelpuntshoek
+angle at the circumference:omtrekshoek
+angle bisector:bissectrice/deellijn
+angle of elevation:hellingshoek
+apex angle:tophoek
+approximation:benadering
+arc:cirkelboogje
+arc:boog
+area:oppervlakte
+arm (of an angle):been (van een hoek)
+asymptote:asymptote
+axis (mv = axes):as
+axis of symmetry:symmetrieas
+balance method:balansmethode
+bar chart:staafdiagram (histogram)
+base:grondtal (van een macht)
+base:grondvlak
+base angles:basishoek
+binomial:tweeterm
+boundary point:randpunt
+box plot:boxplot
+brackets:haakjes
+branches (of a tree diagram):takken (van een boomdiagram)
+break-even point:omslagpunt
+centre (of a circle):middelpunt
+centroid:zwaartepunt
+circle:cirkel
+circumcircle:omgeschreven cirkel
+circumference of a circle:omtrek van een cirkel
+class interval:klasse
+class boundaries:klassengrenzen
+class width:klassenbreedte
+common factor:gemeenschappelijke factor
+compound solid:samengestelde figuur
+cone:kegel
+constant:constant
+constant of proportionality:evenredigheidsconstante
+coordinate system:assenstelsel
+coordinates:coördinaten
+corresponding angles:overeenkomstige hoeken
+corresponding sides:overeenkomstige zijden
+cosine:cosinus
+counterexample:tegenvoorbeeld
+cross products:kruisproducten
+cross-section:doorsnede
+cube:kubus
+cube root:derdemachtswortel
+cuboid:balk
+cumulative frequency graph:somfrequentie-grafiek
+cumulative frequency table:somfrequentie-tabel
+cylinder:cilinder
+decimal number:kommagetal
+definition:defenitie
+degree:graad
+denominator:noemer
+dependent variable:afhankelijke variabele
+diagonal:diagonaal
+diameter:diameter (middellijn)
+difference function:verschilfunctie
+difference graph:verschilgrafiek
+directly proportional:recht evenredig
+discriminant:discriminant
+distance:afstand
+dividend:deeltal
+divisible:deelbaar
+divisor:deler
+domain:domein
+downward opening parabola:bergparabool
+edge:ribbe
+enlargement:vergroting
+equation:vergelijking
+equilateral:gelijkzijdig(e)
+exponent:exponent
+exponential:exponentieel
+exponential function:exponentiële functie
+F-angles:F-figuur
+face:grensvlak
+factor:factor
+family of functions:familie van functies
+family of graphs:bundel van grafieken
+formula:formule
+fraction:breuk
+fractional function:gebroken functie
+frequency:frequentie
+frequency table with
+grouped data  :frequentietabel met
+klassenindeling
+frequency polygon:lijndiagram
+front-elevation:vooraanzicht
+full turn:volle hoek
+function:functie
+function notation:functievoorschrift
+gradient:hellingsgetal
+graph:grafiek
+grid point:roosterpunt
+growth factor:groeifactor
+hyperbola:hyperbool
+hypotenuse:langste zijde (schuine zijde)
+image:functiewaarde
+incircle:ingeschreven cirkel
+independent variable:onafhankelijke variabele
+inequality:ongelijkheid
+initial amount:beginhoeveelheid
+interquartile range:kwartielafstand
+interval:interval
+interval notation:intervalnotatie
+inversely proportional:omgekeerd evenredig
+isosceles triangle:gelijkbenige driehoek
+kite:vlieger
+like terms:gelijksoortige termen
+line symmetry:lijnsymmetrie
+linear formula:lineaire formule
+linear graph:lineaire grafiek
+long diagonal:lichaamsdiagonaal
+lower quartile:eerste kwartiel
+mean:gemiddelde
+mean deviation from
+the mean  :gemiddelde afwijking van
+het gemiddelde  
+mean value (of a graph):evenwichtsstand
+median:mediaan (in statistiek)
+median:zwaartelijn (in meetkunde)
+mid-parallel:middenparallel
+midpoint of a class:klassenmidden
+modal class:modale klasse
+mode:modus (in statistiek)
+multiplication table:vermenigvuldigtabel
+multiplication dot:vermenigvuldigpunt
+net:uitslag
+no point in common:geen enkel punt
+gemeenschappelijk  
+number line:getallenlijn
+numerator:teller
+obtuse angle:stompe hoek
+obtuse-angled triangle:stomphoekige driehoek
+opposite angles:overstaande hoek
+opposite numbers:tegengestelde getallen
+order of operations:volgorde bij berekeningen
+origin:oorsprong
+orthocentre:hoogtepunt
+parabola:parabool
+parallel projection:parallelprojectie
+parallel:evenwijdig
+parallelogram:parallellogram
+parameter:parameter
+percent:procent
+perimeter:omtrek
+period:periode
+periodic graphs:periodieke grafieken
+perpendicular:loodrecht
+perpendicular bisector:middelloodlijn
+perspective drawing:perspectieftekening
+pictogram:beelddiagram
+pie chart:cirkeldiagram
+point of intersection:snijpunt
+point symmetry:puntsymmetrie
+power:macht
+power function:machtsfunctie
+prime number:priem getal
+prism:prisma
+probability:kans
+probability experiments:kansexperimenten
+product:product
+proof:bewijs
+propostion:vermoeden
+pyramid:piramide
+Pythagoras' theorem:stelling van Pythagoras
+quadrant:kwadrant
+quadratic equation:kwadratische vergelijking
+quadratic formula:kwadratische formule
+the quadratic formula:abc-formule
+quadrilateral:vierhoek
+radius (mv = radii):straal
+random numbers:toevalsgetallen
+range (in statistics):spreidingsbreedte
+range (of a function):bereik
+ratio:verhouding
+ratio table:verhoudingstabel
+rectangle:rechthoek
+reflection symmetry:spiegelsymmetrie
+relation:verband
+relative number:relatief getal
+rhombus:ruit
+right angle:rechte hoek
+right-angled triangle:rechthoekige driehoek
+rotation symmetry:draaisymmetrie
+rule of thumb:vuistregel
+sample:steekproef
+scale:schaal
+scale:stapgrootte
+scale factor:vergrotingsfactor
+scientific notation:wetenschappelijke notatie
+sector:sector
+shape:vorm
+shorter sides:rechtshoekszijden
+side-elevation:zijaanzicht
+similar figures:gelijkvormige figuren
+simultanious equations:stelsel vergelijkingen
+sine:sinus
+solid:ruimtefiguur
+solution:oplossing
+sphere:bol
+square:kwadraat
+square:vierkant
+square root:wortel
+square root function:wortelfunctie
+sum function:somformule
+sum graph:somgrafiek
+standard notation:standaardvorm
+stem-and-leaf diagram:steelbladdiagram
+straight angle:gestrekte hoek
+systematically counting:systematisch tellen
+tangent:tangens
+term:term
+Thales' theorem:stelling van Thales
+theorem:stelling
+to add:optellen
+to add a fixed number:optellen van een vast getal
+to calculate:berekenen
+to check:controleren
+to compare:vergelijken
+to complete the square:kwadraat afsplitsen
+to construct:construeren
+to divide:delen
+to enclose:inlijsten
+to enlarge:vergroten
+to express q in terms of p:q in p uitdrukken
+to factorise:ontbinden in factoren
+to fall:dalen
+to find the square root:worteltrekken
+to multiply:vermenigvuldigen
+to raise to a power:machtsverheffen
+to rearrange a formula:formule herschrijven
+to reason in geometrie:meetkundig redeneren
+to reduce to zero:op nul gelijkstellen
+to rise:stijgen
+to round up/down:afronden
+to simplify:vereenvoudigen
+to simulate:simuleren
+to solve:oplossen
+to stretch parallel to the y-axis:vermenigvuldigen ten
+opzichte van de x-as  
+to substitute:substitueren
+to subtract:aftrekken
+to take without replacement:trekken zonder terugleggen
+to touch:raken
+to translate (a graph):verschuiven (van een grafiek)
+top-view:bovenaanzicht
+trapezium:trapezium
+tree diagram:boomdiagram
+trigonometric ratios:goniometrische verhoudingen
+trinomial:drieterm
+types of average:centrummaten
+unit:eenheid
+units of area:oppervlaktematen
+units of length:lengtematen
+units volume:inhoudsmaten
+upper quartile:derde kwartiel
+upward opening parabola:dalparabool
+value:waarde
+variable:variabele
+vertex:top van een parabool
+vertex (mv = vertices):hoekpunt
+vertical translation:verticaal verschuiven
+view-line:kijklijn
+volume:inhoud
+y-intercept:startgetal
+Z-angles:Z-hoeken
+zigzag:zaagtandkaas:chees
