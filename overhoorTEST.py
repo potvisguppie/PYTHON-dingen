@@ -14,141 +14,166 @@ STANDAARD_LIJST = 'EN-NED'
 STOPPEN = 'q'
 TOEVOEGEN = 't'
 
-def main():
-	leeg_scherm()
-	print_header()
-	print_regel(OVERHOREN + " - overhoor de geselecteerde woordenlijst")
-	print_regel(TOEVOEGEN + " - voeg woorden toe aan de geselecteerde woordenlijst")
-	print_regel(KIES_LIJST + " - Selecteer een andere woordenlijst")
-	print_regel(NIEUWE_LIJST + " - Maak een nieuwe woordenlijst")
-	print_regel(STOPPEN + " - Stoppen  ")
-	print_footer()
 
-	vraag = input(" Wat wil je doen?")
-	if vraag == OVERHOREN:
-		woordenlijst = lees_woordenlijst()
-		overhoren(woordenlijst)
-	
-	elif vraag == TOEVOEGEN:
-		nieuwe_naam = nieuwe_lijst_maken()
-		voeg_woorden_toe( nieuwe_naam + EXTENSIE)
+def leeg_scherm():
+    os.system('cls' if os.name == 'nt' else 'clear')
 
-	elif vraag == NIEUWE_LIJST:
-		leeg_scherm()
-		nieuwe_naam = nieuwe_lijst_maken()
-		voeg_woorden_toe(nieuwe_naam) 
-	
-	elif vraag == KIES_LIJST:
-		woordenlijst_naam = kies_woordenlijst()
 
-	
-	elif vraag == STOPPEN:
-		leeg_scherm()
-		quit()
-
-def lees_woordenlijst():
-	f = open('E:\\PYTHON dingen\message (2)' + EXTENSIE)
-	woordenlijst = {}
-	for line in f:
-		if len(line.strip('\n').split(SCHEIDER)) == 2:
-			woord1, woord2 = line.strip('\n').split(SCHEIDER)
-			woordenlijst[woord1] = woord2
-	f.close()
-	return woordenlijst
+def lees_woordenlijst(bestandsnaam):
+    woordenlijst = {}
+    try:
+        with open(bestandsnaam + EXTENSIE, 'r') as f:
+            for line in f:
+                if len(line.strip().split(SCHEIDER)) == 2:
+                    woord1, woord2 = line.strip().split(SCHEIDER)
+                    woordenlijst[woord1] = woord2
+    except FileNotFoundError:
+        print(f"Bestand {bestandsnaam + EXTENSIE} niet gevonden.")
+    return woordenlijst
 
 
 def nieuwe_lijst_maken():
-	print_header()
-	print_regel("Hoe wil je je nieuwe lijst noemen?")
-	print_footer()
-	nieuwe_naam = input('')
-	f = open(nieuwe_naam + EXTENSIE, "a")
-	return nieuwe_naam
+    print_header()
+    print_regel("Hoe wil je je nieuwe lijst noemen?")
+    print_footer()
+    nieuwe_naam = input('').strip()
+    with open(nieuwe_naam + EXTENSIE, "a"):
+        pass
+    return nieuwe_naam
 
 
 def schrijf_woorden_lijst(bestandsnaam, woordenlijst):
-	print()	
+    with open(bestandsnaam + EXTENSIE, 'w') as f:
+        for woord1, woord2 in woordenlijst.items():
+            f.write(f"{woord1}{SCHEIDER}{woord2}\n")
 
 
-def voeg_woorden_toe(nieuwe_naam):
-	'''leg uit functie'''
-	f = open(nieuwe_naam , 'w')
-	doorgaan = True
-	while doorgaan:
-		leeg_scherm()
-		print_header()
-		print_regel("Welk woord wil je toevoegen? Klik q om te stoppen")
-		print_footer()
-		woord1 = input().lower()
-		if woord1 == STOPPEN:
-			doorgaan = False
-			f.close()
-			main()
-		else:
-			#vraagt vertaling
-			leeg_scherm()
-			print_header()
-			print_regel("En wat is de vertaling daarvan? ")
-			print_footer()
-			woord2 = input().lower()
-			f.write(woord1 + ":" + woord2 + "\n")
-	f.close()
+def voeg_woorden_toe(bestandsnaam):
+    woordenlijst = lees_woordenlijst(bestandsnaam)
+    woord1 = ''
+    while woord1 != STOPPEN:
+        leeg_scherm()
+        print_header()
+        print_regel("Welk woord wil je toevoegen? Klik q om te stoppen")
+        print_footer()
+        woord1 = input().lower()
+       
+        if woord1 != STOPPEN:
+            leeg_scherm()
+            print_header()
+            print_regel("En wat is de vertaling daarvan? ")
+            print_footer()
+            woord2 = input().lower()
+            woordenlijst[woord1] = woord2
+            schrijf_woorden_lijst(bestandsnaam, woordenlijst)
+    return woordenlijst
 
 
 def overhoren(woordenlijst):
-	for woord1, woord2 in woordenlijst.items():
-		leeg_scherm()
-		print_header()
-		print_regel("Wat is de betekenis van '{}' ".format(woord1))
-		print_regel("Type '{}' om te stoppen of '{}' om het woord te verwijderen".format(STOPPEN, DELETE))
-		print_footer()
-		antwoord = input("")
-		if antwoord == woord2:
-			print_header()
-			print_regel("goed gedaan! ")
-			print_footer()
-		if antwoord == STOPPEN:
-			main()
-			break
-		if antwoord == DELETE:
-			verwijder_woord()
-		else:
-			print_header()
-			print_regel("helaas dat is niet goed. Dit was het antwoord " + woord2)
-			print_footer()
+    woordenlijst2 = woordenlijst.copy()  
+    for woord1, woord2 in woordenlijst2.items():  
+        leeg_scherm()
+        print_header()
+        print_regel(f"Wat is de betekenis van '{woord1}'?")
+        print_regel(f"Type '{STOPPEN}' om te stoppen of '{DELETE}' om het woord te verwijderen")
+        print_footer()
+        antwoord = input("")
+        if antwoord == woord2:
+            leeg_scherm()
+            print_header()
+            print_regel("Goed gedaan!")
+            print_footer()
+        elif antwoord == STOPPEN:
+            break
+        elif antwoord == DELETE:
+            verwijder_woord(woord1, woordenlijst)
+        else:
+            leeg_scherm()
+            print_header()
+            print_regel(f"Helaas, dat is fout. Dit was het antwoord: {woord2} |klik k om door te gaan")
+            print_footer()
+            doorgaan = input("")
+            if doorgaan == "k":
+                print("")
+            
+    return woordenlijst    
 
-def verwijder_woord(woord, woordenlijst, woordenlijst_naam):
-	woordenlijst = woordenlijst_naam + EXTENSIE
-	del woordenlijst[woord]
-	schrijf_woorden_lijst(woordenlijst_naam, woordenlijst)
-	
 
-def print_regel(regel=""):
-  	print(("| {:" + str(SCHERMBREEDTE -4)+ "} |").format(regel))
 
-def print_header():
-	print("="*SCHERMBREEDTE)
-	print("|" +  " "*(SCHERMBREEDTE -2)  +  "|")
+def print_afscheid():
+    try:
+        with open("afscheid.txt", 'r') as f:
+            afscheid = f.read()
+            print(afscheid)
+    except FileNotFoundError:
+        print("Afscheid bestand niet gevonden.")
 
 
 def print_footer():
-	print("|" +  " "*(SCHERMBREEDTE -2)  +  "|")
-	print("="*SCHERMBREEDTE)
+    print("|" + " " * (SCHERMBREEDTE - 2) + "|")
+    print("=" * SCHERMBREEDTE)
+
+
+def print_header():
+    print("=" * SCHERMBREEDTE)
+    print("|" + " " * (SCHERMBREEDTE - 2) + "|")
+
+
+def print_menu(lijst_naam):
+    print_header()
+    print_regel(f"Woordenlijst: {lijst_naam}")
+    print_regel(f"{OVERHOREN} - overhoor de geselecteerde woordenlijst")
+    print_regel(f"{TOEVOEGEN} - voeg woorden toe aan de geselecteerde woordenlijst")
+    print_regel(f"{KIES_LIJST} - Selecteer een andere woordenlijst")
+    print_regel(f"{NIEUWE_LIJST} - Maak een nieuwe woordenlijst")
+    print_regel(f"{STOPPEN} - Stoppen")
+    print_footer()
+
+
+def print_regel(inhoud=''):
+    print(f"| {inhoud:<{SCHERMBREEDTE - 4}} |")
+
+
+def verwijder_woord(woord, woordenlijst):
+    if woord in woordenlijst:
+        del woordenlijst[woord]
+        print(f"'{woord}' is verwijderd uit de lijst.")
+        
+    else:
+        print(f"'{woord}' niet gevonden in de lijst.")
+    return woordenlijst
+
 
 def kies_woordenlijst():
-	leeg_scherm()
-	print_header()
-	print_regel("Welke woordenlijst wil je selecteren")
-	print_footer()
-	woordenlijst_naam = input('')
+    leeg_scherm()
+    print_header()
+    print_regel("Welke woordenlijst wil je selecteren?")
+    print_footer()
+    lijst_naam = input('').strip()
+    return lijst_naam
 
-	return woordenlijst_naam
 
-
-def leeg_scherm():
-  os.system('cls||clear')
-
+def main():
+    lijst_naam = STANDAARD_LIJST
+    woordenlijst = lees_woordenlijst(lijst_naam)
+    vraag = ""
+    while vraag != STOPPEN:
+        leeg_scherm()
+        print_menu(lijst_naam)
+        vraag = input("Wat wil je doen? ").strip().lower()
+        if vraag == OVERHOREN:
+            woordenlijst = overhoren(woordenlijst)
+        elif vraag == TOEVOEGEN:
+            woordenlijst = voeg_woorden_toe(lijst_naam)
+        elif vraag == NIEUWE_LIJST:
+            lijst_naam = nieuwe_lijst_maken()
+            woordenlijst = {}
+        elif vraag == KIES_LIJST:
+            lijst_naam = kies_woordenlijst()
+            woordenlijst = lees_woordenlijst(lijst_naam)
+        elif vraag == STOPPEN:
+            print_afscheid()
+        else:
+            print("Ongeldige keuze, probeer opnieuw.")
 
 main()
-
-

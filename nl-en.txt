@@ -1,0 +1,5 @@
+tafel:table
+stoel:chair
+prullenbak:trashbin
+school:school
+tas:bag
